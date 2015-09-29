@@ -6,7 +6,7 @@ export default Ember.Component.extend({
     updateRentalForm() {
       this.set('updateRentalForm', true)
     },
-    update(rental) {
+    updateRental(rental) {
       var params = {
         owner: this.get('owner'),
         city: this.get('city'),
