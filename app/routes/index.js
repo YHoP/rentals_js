@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  today: Date.now(),
   model() {
     return Ember.RSVP.hash({
       cities: this.store.findAll('city'),
@@ -9,13 +10,19 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    save3(params) {
-      var newRental = this.store.createRecord('rental', params);
-      newRental.save();
+    saveCity(params) {
+      var newCity = this.store.createRecord('city', params);
+      newCity.save();
       this.transitionTo('index');
-    },
+    }
 
-    update(rental, params) {
+    // save3(params) {
+    //   var newRental = this.store.createRecord('rental', params);
+    //   newRental.save();
+    //   this.transitionTo('index');
+    // },
+
+    updateRental(rental, params) {
       // debugger;
       Object.keys(params).forEach(function(key){
         if(params[key]!==undefined){
@@ -26,11 +33,11 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
-    destroyRental(rental) {
-      rental.destroyRecord().then(function() {
-        city.save();
-      });
-      this.transitionTo('index');
-    }
+    // destroyRental(rental) {
+    //   rental.destroyRecord().then(function() {
+    //     city.save();
+    //   });
+    //   this.transitionTo('index');
+    // },
   }
 });
