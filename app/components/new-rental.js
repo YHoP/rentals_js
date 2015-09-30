@@ -7,9 +7,8 @@ export default Ember.Component.extend({
       this.set('addNewRental', true);
     },
 
-  saveRental() {
+    saveRental(rental) {
       var params = {
-        // owner: this.get('owner') ? this.get('owner') : "",
         owner: this.get('owner'),
         city: this.get('city'),
         type: this.get('type'),
@@ -18,7 +17,7 @@ export default Ember.Component.extend({
         date_added: Date.now()
       };
       this.set('addNewRental', false),
-      this.sendAction('saveRental', params);
+      this.sendAction('saveNewRental', params);
     },
 
     save1() {

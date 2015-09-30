@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isImageShowing: false,
-  // updateRental: false,
  actions: {
     imageShow() {
       this.set('isImageShowing', true);
@@ -13,16 +12,11 @@ export default Ember.Component.extend({
     },
 
     updateRental(rental, params) {
-      this.sendAction('updateRentalForm', rental, params);
+      this.sendAction('updateRental', rental, params);
     },
 
     destroyRental(rental) {
       this.sendAction('destroyRental', rental);
     }
-    // delete(rental) {
-    //   if (confirm('Are you sure you want to delete this rental?')) {
-    //     this.sendAction('destroyRental', rental);
-    //   }
-    // }
   }
 });

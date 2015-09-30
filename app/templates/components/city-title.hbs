@@ -1,0 +1,12 @@
+{{city.name}}'s Details
+<br>
+Country: {{city.country}}
+<hr>
+Rentails available in {{city.name}}:
+<ul>
+  {{#each city.rentals as |rental|}}
+    <li>{{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}}{{/link-to}}</li>
+    {{/each}}
+</ul>
+
+<button class="btn btn-danger" {{action 'destroyCity' city}}>Delete</button>
