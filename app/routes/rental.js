@@ -19,6 +19,6 @@ export default Ember.Route.extend({
         city.save();
       });
       this.transitionTo('index');
-    },
+    }
   }
 });

@@ -12,10 +12,10 @@
          {{input value=type id="type"}}
        </div>
 
-       <div class="form-group">
+       <!-- <div class="form-group">
          <label for="city">City</label>
          {{input value=city id="city"}}
-       </div>
+       </div> -->
 
        <div class="form-group">
          <label for="bedrooms">Number of Bedrooms</label>
@@ -27,7 +27,17 @@
          {{input value=image id="image"}}
        </div>
 
-       <button class="btn btn-success" {{action 'saveRental'}}>Save</button>
+       <div class="form-group">
+         <label for="latitude">Latitude</label>
+         {{input value=latitude id="latitude"}}
+       </div>
+
+       <div class="form-group">
+         <label for="longitude">Longitude</label>
+         {{input value=longitude id="longitude"}}
+       </div>
+
+       <button class="btn btn-success" {{action 'saveRental' city}}>Save</button>
      </form>
    </div>
  {{else}}

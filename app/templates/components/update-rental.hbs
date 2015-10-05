@@ -1,5 +1,3 @@
-{{yield}}
-
 {{#if updateRentalForm}}
 <h4>Update {{rental.owner}}'s {{rental.type}}</h4>
 <div>
@@ -14,17 +12,17 @@
       {{input value=type id="type" placeholder=rental.tyep}}
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="city">City</label>
       {{input value=city id="city" placeholder=rental.city.name}}
-    </div>
+    </div> -->
 
     <div class="form-group">
       <label for="image">Image URL</label>
       {{input value=image id="image" placeholder=rental.image}}
     </div><br>
 
-    <button class="btn btn-success" {{action 'update' rental}}>Save</button>
+    <button class="btn btn-success" {{action 'updateRental' rental}}>Save</button>
   </form>
 </div><br>
 {{else}}
