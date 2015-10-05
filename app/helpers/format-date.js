@@ -5,4 +5,4 @@ export function formatDate(params) {
   return moment(date).format('LL');
 }
 
-export default Ember.Helper.helper(format-date);
+export default Ember.Helper.helper(formatDate);
